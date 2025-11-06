@@ -1,7 +1,9 @@
 import java.util.Stack;
+import java.util.Scanner;
 
 public class ValidParentheses {
     public static void main(String[] args) {
+
         String s = "{[()]}";
         System.out.println(isBalanced(s)); // true
 
@@ -10,6 +12,30 @@ public class ValidParentheses {
 
         s = "{{[[(())]]}}";
         System.out.println(isBalanced(s)); // true
+
+        String input = "";
+        try (Scanner scanner = new Scanner(System.in)) {
+            while (true) {
+                System.out.print("Enter a string of parentheses (type quit to exit): ");
+                input = scanner.nextLine();
+
+                if (input.equals("quit")) {
+                    break;
+                }
+
+                if (input.isEmpty()) {
+                    System.out.println("Please enter something.");
+                    continue;
+                }
+
+                if (isBalanced(input)) {
+                    System.out.println("The parentheses are balanced.");
+                } else {
+                    System.out.println("The parentheses are not balanced.");
+                }
+            }
+        }
+
     }
 
     public static boolean isBalanced(String s) {
