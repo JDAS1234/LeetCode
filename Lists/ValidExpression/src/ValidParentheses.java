@@ -38,6 +38,8 @@ public class ValidParentheses {
 
     }
 
+
+    // Function to check if the parentheses are balanced
     public static boolean isBalanced(String s) {
         Stack<Character> stack = new Stack<>();
         for (char ch : s.toCharArray()) {
@@ -46,7 +48,7 @@ public class ValidParentheses {
             } else if (ch == ')' || ch == '}' || ch == ']') {
                 if (stack.isEmpty())
                     return false;
-                char top = stack.peek();
+                char top = stack.peek(); // looks at the top bracket without removing it like pop() would
                 if (!isMatchingPair(top, ch))
                     return false;
                 stack.pop(); // removes the top bracket that matched
@@ -56,6 +58,7 @@ public class ValidParentheses {
         return stack.isEmpty();
     }
 
+    // Helper function to check if the pair of parentheses match
     private static boolean isMatchingPair(char open, char close) {
         return (open == '(' && close == ')') ||
                 (open == '{' && close == '}') ||
