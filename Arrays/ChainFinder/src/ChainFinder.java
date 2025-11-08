@@ -18,16 +18,7 @@ public class ChainFinder {
         int longestChain = 0;
         boolean flagLow = false;
 
-        String[] parts = input.split(" ");
-        int[] numbers = new int[parts.length];
-        for (int i = 0; i < parts.length; i++) {
-            try {
-                numbers[i] = Integer.parseInt(parts[i]);
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input: '" + parts[i] + "' is not a number.");
-                return -1;
-            }
-        }
+        int[] numbers = InputToArray(input);
 
         if (numbers.length == 0) {
             return 0;
@@ -57,6 +48,22 @@ public class ChainFinder {
 
     }
 
+
+    public static int[] InputToArray(String input) {
+        String[] parts = input.split(" ");
+        int[] numbers = new int[parts.length];
+        for (int i = 0; i < parts.length; i++) {
+            try {
+                numbers[i] = Integer.parseInt(parts[i]);
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input: '" + parts[i] + "' is not a number.");
+                return new int[0];
+            }
+        }
+        return numbers;
+    }
+
+
     public static void main(String[] args) throws Exception {
 
         String input = "";
@@ -74,7 +81,7 @@ public class ChainFinder {
                     continue;
                 }
 
-                if (findLongestChain(input) != -1)
+                if (findLongestChain(input) != 0)
                     System.out.println("Longest chain is " + findLongestChain(input) + " numbers long");
 
             }

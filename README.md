@@ -4,3 +4,4 @@ Tracking my completed leetcode problems
 
 
 - [ValidParentheses](https://www.geeksforgeeks.org/dsa/check-for-balanced-parentheses-in-an-expression/) ✅
+- [ChainFinder](https://www.geeksforgeeks.org/dsa/maximum-length-bitonic-subarray/) ✅
