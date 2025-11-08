@@ -10,17 +10,11 @@ public class Employee {
         System.out.println("Employee ID: " + id);
     }
 
-    public Employee(int id){
-        Employee.id = id;
-        System.out.println("Employee ID: " + id);
-    }
 
     public static void main(String[] args) throws Exception {
         
         new Employee();
         new Employee();
-        new Employee(10);
         new Employee();
-
     }
 }
